@@ -19,6 +19,7 @@ def plot_actual_vs_predicted(y_test, y_pred):
     plt.legend()
     plt.show()
 
+# Run Pipeline
 def main():
     model = joblib.load("../model/bike_prediction.pkl")
     x_test = joblib.load("../data/x_test.pkl")

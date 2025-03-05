@@ -22,14 +22,11 @@ def train_model(x_train, y_train):
 
 # Run Pipeline
 def main():
-    # Load & prepare data
     df = load_data("../data/bikes.csv")
     x_train, x_test, y_train, y_test = prepare_data(df, target_column="rentals")
 
-    # Train model
     model = train_model(x_train, y_train)
 
-    # Export model & test data
     joblib.dump(model, "../model/bike_prediction.pkl")
     joblib.dump(x_test, "../data/x_test.pkl")
     joblib.dump(y_test, "../data/y_test.pkl")

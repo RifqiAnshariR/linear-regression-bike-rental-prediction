@@ -1,10 +1,10 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Membaca file CSV menjadi DataFrame
+# Load Data
 df = pd.read_csv("../data/bikes.csv")
 
-# Menampilkan informasi dasar dataset
+# Data Info
 print("📌 First 5 Rows of Data:\n", df.head())
 print("\n🔍 Data Info:")
 print(df.info())
@@ -12,7 +12,7 @@ print("\n📊 Descriptive Statistics:\n", df.describe())
 print("\n⚠ Missing Values Per Column:\n", df.isnull().sum())
 print("\n📌 Column Names:", df.columns.tolist())
 
-# Plot untuk setiap fitur vs rentals
+# Plot Feature vs Label
 features = ["temperature", "humidity", "windspeed"]
 colors = ["blue", "orange", "green"]
 
@@ -25,5 +25,5 @@ for ax, feature, color in zip(axes, features, colors):
     ax.set_ylabel("Rentals")
     ax.grid(True)
 
-plt.tight_layout()  # Menyesuaikan layout agar tidak berantakan
+plt.tight_layout()
 plt.show()
